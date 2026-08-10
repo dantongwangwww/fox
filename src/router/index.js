@@ -5,7 +5,7 @@ import { ElMessage } from "element-plus";
 const routes = [
   { path: "/", name: "双狐数据图形云服务", component: () => import("../views/Home.vue") },
   { path: "/Browse", name: "在线浏览", component: () => import("../views/Browse.vue") },
-  { path: "/Plan", name: "平面图", component: () => import("../views/Plan.vue") },
+  { path: "/Plan", name: "平面图", component: () => import("../views/plan.vue") },
   { path: "/Well", name: "单井数据图", component: () => import("../views/Well.vue") },
   { path: "/3D", name: "3D场景", component: () => import("../views/3D.vue") },
   { path: "/MultiWell", name: "多井数据图", component: () => import("../views/MultiWell.vue") },
