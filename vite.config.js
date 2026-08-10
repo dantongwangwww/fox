@@ -4,15 +4,14 @@ import { ViteEjsPlugin } from "vite-plugin-ejs";
 
 import path from "path";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+import mxFileCopyPlugin from './build/mx-file-copy-plugin'; // 请替换为实际插件包名
 const timestamp = new Date().getTime(); // 获取当前时间戳
 // 定义路径别名
 const resolvePath = (p) => path.resolve(process.cwd(), p);
 
 export default defineConfig(({ mode }) => {
-  return {
-    base: "/doublefox",
-    plugins: [
-      vue(),
+  const plugins = [
+    vue(),
       ViteEjsPlugin({
         buildTime: new Date().toISOString(),
       }),
@@ -25,7 +24,15 @@ export default defineConfig(({ mode }) => {
         // 指定symbolId格式
         symbolId: "icon-[name]",
       }),
-    ],
+  ];
+  if (!process.env.preview) {
+    plugins.push(
+      mxFileCopyPlugin([{ from: 'dist/doublefox/index.html', to: 'dist/index.html', isDelete: true }])
+    );
+  }
+  return {
+    base: "/doublefox",
+    plugins,
     resolve: {
       alias: {
         // 配置基础路径别名
