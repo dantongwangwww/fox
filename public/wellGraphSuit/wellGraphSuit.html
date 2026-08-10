@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>钻井轨迹图</title>
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/wellGraphSuit/json5.min.js" type="application/javascript"></script>
+  <script src="/wellGraphSuit/promise-polyfill.min.js" type="application/javascript"></script>
+  <script src="/wellGraphSuit/three.min.js" type="application/javascript"></script>
+  <script src="/wellGraphSuit/OrbitControls.min.js" type="application/javascript"></script>
+  <script src="/wellGraphSuit/axios.min.js" type="application/javascript"></script>
+  <script src="/wellGraphSuit/drawWellTrack.js" type="application/javascript"></script>
+  <script src="/wellGraphSuit/THREE.MeshLine.js" type="application/javascript"></script>
+  <link href="/wellGraphSuit/bulma.min.css" rel="stylesheet" type="text/css"/>
+  <link href="/wellGraphSuit/index.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div class="main-container">
+    <div class="navbar" id="head-container">
+      <div id="head-title" class="navbar-brand">
+        <div class="navbar-item">
+          <div id="well-name-text">
+          </div>
+        </div>
+        <div class="navbar-item">
+          <div class="control" id="well-name-select-area">
+            <input class="input is-small" id="well-name-input" type="search" placeholder="请输入井名"/>
+          </div>
+          <div id="well-name-dropdown"></div>
+        </div>
+        <a role="button" id="head-burger" class="navbar-burger" data-target="head-menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="head-menu">
+        <div id="type-select-area" class="navbar-start">
+          <div class="radio-group navbar-item">
+            <input type="radio" id="spatialTrackSel" name="typeSel" value="spatialTrack"/>
+            <label for="spatialTrackSel" title="立体空间轨迹图">立体空间轨迹图</label>
+          </div>
+          <div class="radio-group navbar-item">
+            <input type="radio" id="verticalProjectionEWSel" name="typeSel" value="verticalProjectionEW" />
+            <label for="verticalProjectionEWSel" title="垂直剖面投影图(东西)">垂直剖面投影图(东西)</label>
+          </div>
+          <div class="radio-group navbar-item">
+            <input type="radio" id="verticalProjectionNSSel" name="typeSel" value="verticalProjectionNS" />
+            <label for="verticalProjectionNSSel" title="垂直剖面投影图(南北)">垂直剖面投影图(南北)</label>
+          </div>
+          <div class= "radio-group navbar-item">
+            <input type="radio" id="horizontalProjectionSel" name="typeSel" value="horizontalProjection" />
+            <label for="horizontalProjectionSel" title="水平位移投影图">水平位移投影图</label>
+          </div>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item" id="select-line-type">
+            <div class="h-line-centered">
+              <input type="checkbox" id="check-real-line" checked>
+              <label for="check-real-line">实钻轨迹</label>
+            </div>
+            <div class="h-line-centered">
+              <input type="checkbox" id="check-design-line" checked>
+              <label for="check-design-line">设计轨道</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="canvas-area">
+      <div id="float-btn-panel">
+        <div id="export-btn" class="float-btn" title="导出">
+          <svg t="1624609062104" id="export-btn-icon" class="icon" viewBox="0 0 1024 1024" p-id="686" width="200" height="200">
+            <path d="M479.4695 825.6815l-317.448-304.866c-16.7175-16.0515-16.7175-42.1515 0-58.203 16.7175-16.056 43.893-16.056 60.6105 0l244.323 234.5535v-594C466.955 80.441 486.071 62 509.8175 62c23.661 0 42.867 18.441 42.867 41.166v594l244.152-234.5535c16.713-16.056 43.893-16.056 60.606 0 16.7175 16.0515 16.7175 42.1515 0 58.203l-317.3625 304.866c-8.055 7.74-18.945 12.015-30.2625 12.015-11.3985 0-22.2885-4.275-30.348-12.015z m399.168 53.991c23.661 0 42.8625 18.441 42.8625 41.1615 0 22.725-19.2015 41.166-42.8625 41.166H140.8625C117.116 962 98 943.559 98 920.834s19.116-41.1615 42.8625-41.1615h737.775z" fill="#1296db" p-id="687"></path>
+          </svg>
+        </div>
+      </div>
+      <div id="loadingText">加载中...</div>
+      <div id="canvas-group">
+        <canvas id="spatialTrack" style="display: none;"></canvas>
+        <canvas id="horizontalProjection" style="display: none;"></canvas>
+        <canvas id="verticalProjectionNS" style="display: none;"></canvas>
+        <canvas id="verticalProjectionEW" style="display: none;"></canvas>
+      </div>
+    </div>
+    <div id="well-name-banner">
+      <div id="well-name-banner-text">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

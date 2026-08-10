@@ -1,0 +1,60 @@
+{
+  "defaultWellNO": "nonono",
+  "defaultGraphType": "spatialTrack",
+  "externalDataBasePath": "http://202.102.44.2:8081/EPBP-syApp/jsgj",
+  "defaultTargetRadius": 40,
+  "spatialTrack": {
+    "xyGridNum": 8,
+    "zGridNum": 10,
+    "xAxisColor": "#ff0000",
+    "yAxisColor": "#00ff00",
+    "zAxisColor": "#0000ff",
+    "maxZToXyRatio": 2,
+    "fontColor": "purple",
+    "realVerticalLineColor": "red",
+    "realTrackLineColor": "red",
+    "realProjectionLineColor": "red",
+    "designVerticalLineColor": "green",
+    "designTrackLineColor": "green",
+    "designProjectionLineColor": "green",
+    "fontSizeToUnitRatio": 0.3,
+    "autoRotate": true
+  },
+  "horizontalProjection": {
+    "xyGridNum": 8,
+    "xAxisColor": "#ff0000",
+    "yAxisColor": "#00ff00",
+    "fontColor": "purple",
+    "realTrackLineColor": "navy",
+    "designTrackLineColor": "green",
+    "fontSizeToUnitRatio": 0.2
+  },
+  "verticalProjectionEW": {
+    "gridNum": 12,
+    "realTrackLineColor": "#4caf50",
+    "designTrackLineColor": "#cf52a3",
+    "fontSizeToUnitRatio": 0.3,
+    "realKopLineColor": "#4caf50",
+    "realTargetCircleColor": "#4caf50",
+    "designKopLineColor": "#cf52a3",
+    "designTargetCircleColor": "#cf52a3",
+    "hAxisColor": "red",
+    "vAxisColor": "green",
+    "fontColor": "purple",
+    "directionLabelColor": "#30a881"
+  },
+  "verticalProjectionNS": {
+    "gridNum": 12,
+    "realTrackLineColor": "#4caf50",
+    "designTrackLineColor": "#cf52a3",
+    "fontSizeToUnitRatio": 0.3,
+    "realKopLineColor": "#4caf50",
+    "realTargetCircleColor": "#4caf50",
+    "designKopLineColor": "#cf52a3",
+    "designTargetCircleColor": "#cf52a3",
+    "hAxisColor": "red",
+    "vAxisColor": "green",
+    "fontColor": "purple",
+    "directionLabelColor": "#30a881"
+  }
+}

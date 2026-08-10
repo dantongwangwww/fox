@@ -1,0 +1,208 @@
+html {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.main-container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+#float-btn-panel {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    z-index: 1;
+}
+
+#float-btn-panel .float-btn {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #cfcfcf;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 16px 0;
+}
+
+#loadingText {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 4px 6px;
+    border-radius: 4px;
+    box-shadow: 0 0 6px #cfcfcf;
+}
+
+.float-btn > svg {
+    height: 24px;
+    width: 24px;
+}
+
+#head-container {
+    max-height: 60px;
+    box-shadow: 0 0 10px #cfcfcf;
+}
+
+#head-menu {
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+#well-name-text {
+    box-shadow: 0 4px 0 #00c4ff;
+    font-weight: 600;
+}
+
+#type-select-area {
+    min-width: 0;
+}
+
+#well-name-select-area {
+    position: relative;
+}
+
+#well-name-dropdown {
+    position: absolute;
+    top: calc(100% - 0.5rem);
+    left: 0.75rem;
+}
+
+#well-name-dropdown .dropdown-content {
+    border: 1px solid #dbdbdb;
+}
+
+#well-name-dropdown .dropdown-item {
+    cursor: pointer;
+}
+
+#well-name-dropdown .dropdown-item:hover {
+    background-color: #f6f6f6;
+}
+
+.mobile-head-btn {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(-50%, 50%);
+    height: 32px;
+    width: 32px;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-head-btn-icon {
+    height: 100%;
+    width: 100%;
+}
+
+#canvas-area {
+    flex: 1 1 auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#canvas-group {
+    flex: 1 1 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+#well-name-banner {
+    flex: 0 0 40px;
+    border-top: 1px solid #cfcfcf;
+}
+
+#well-name-banner-text {
+    text-align: center;
+    font-weight: 600;
+    line-height: 38px;
+}
+
+#canvas-group canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+}
+
+.radio-group {
+    padding: 8px 8px;
+    margin: 4px;
+    border-radius: 8px;
+    text-align: center;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.radio-group:hover {
+    background-color: #f6f6f6;
+    color: #2196F3;
+}
+
+.radio-group > label,
+#select-line-type label {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.radio-group input[type=radio] {
+    margin-right: 6px;
+}
+
+.radio-group.selected {
+    background-color: aliceblue;
+}
+
+.h-line-centered {
+    display: inline-flex;
+    align-items: center;
+}
+
+#select-line-type {
+    display: inline-flex;
+    margin: 8px;
+    border-radius: 6px;
+    background-color: aliceblue;
+}
+
+#select-line-type .h-line-centered {
+    margin-right: 12px;
+}
+
+#select-line-type .h-line-centered:last-child {
+    margin-right: 0;
+}
+
+#select-line-type .h-line-centered input[type=checkbox] {
+    margin-right: 6px;
+}
+
+@media screen and (max-width: 1024px) {
+    #head-menu {
+        opacity: 0.95;
+    }
+    #select-line-type {
+        margin-bottom: 2px;
+        margin-left: 10px;
+    }
+    #head-menu .navbar-end {
+        display: flex;
+        justify-content: center;
+    }
+}
