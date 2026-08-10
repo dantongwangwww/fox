@@ -49,6 +49,9 @@ import {
 } from '@element-plus/icons-vue';
 import sceneInfoList from "@/data/homeListData.js";
 import { ref } from 'vue'
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 const helpUrl = ref(`${window.webConfig.helpUrl}`)
 let imgUrlList = sceneInfoList.map(item => {
   return {
@@ -67,7 +70,8 @@ defineProps({
   }
 })
 function target(data) {
-  window.open(data.targetUrl);
+   const { href } = router.resolve(data.targetUrl);
+  window.open(href); 
 }
 </script>
 

@@ -34,7 +34,9 @@ const props = defineProps({
 const resolvedImageSrc = new URL(`../assets/${props.imageSrc}`, import.meta.url).href;
 
 const open = () => {
-  window.open(`${window.webConfig.routerBase+props.targetUrl}`);
+  // 用 router.resolve 生成带 base 前缀的完整路径（如 /doublefoxapp/Well），避免丢 base
+  const { href } = router.resolve(props.targetUrl);
+  window.open(href);
 };
 
 </script>

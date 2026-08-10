@@ -10,7 +10,7 @@ const resolvePath = (p) => path.resolve(process.cwd(), p);
 
 export default defineConfig(({ mode }) => {
   return {
-    base: "/doublefoxapp",
+    base: "/doublefox",
     plugins: [
       vue(),
       ViteEjsPlugin({
@@ -38,18 +38,19 @@ export default defineConfig(({ mode }) => {
       types: ["element-plus/global"],
     },
     server: {
-      host: "192.168.1.173", // 替换为你的域名
+      host: "0.0.0.0", // 监听所有网卡
       port: 5555, // 你可以指定端口号
       historyApiFallback: true, // 路由重定向
       proxy: {
         "/api": {
-          target: "http://192.168.1.89:19100",
+          target: "https://www.ideas.cnpc",
           changeOrigin: true,
+          secure: false, // 内网自签名证书，跳过 TLS 校验
         },
       },
     },
     build: {
-      outDir: "dist/doublefoxapp",
+      outDir: "dist/doublefox",
       emptyOutDir: true,
       chunkSizeWarningLimit: 2000, // 单位 KB
       rollupOptions: {

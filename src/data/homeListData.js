@@ -1,11 +1,10 @@
-const routerBase=window.webConfig.routerBase||''
 export default [
   {
     title: "在线浏览",
     description: "支持在线打开双狐软件支持的所有图件",
     imageSrc: "plan-view.jpg",
     componentUrl: "/src/components/Browse.vue",
-    targetUrl: routerBase+"/Browse",
+    targetUrl: "/Browse",
   },
   // {
   //   title: "平面图场景",
@@ -19,28 +18,28 @@ export default [
     description: "支持测井曲线、地层及岩性等数据展示，提供图道移动/编辑/缩放功能，支持深度比例调节及范围设置",
     imageSrc: "single-well.jpg",
     componentUrl: "/src/components/Well.vue",
-    targetUrl: routerBase+"/Well",
+    targetUrl: "/Well",
   },
   {
     title: "地震剖面场景",
     description: "支持叠加断层、层位、井等数据，集成水平/垂直/等比缩放功能",
     imageSrc: "seismic-section.jpg",
     componentUrl: "/src/components/Seismic.vue",
-    targetUrl: routerBase+"/Seismic",
+    targetUrl: "/Seismic",
   },
   {
     title: "3D场景",
     description: "支持图件三维展示",
     imageSrc: "3d.jpg",
     componentUrl: "/src/components/3D.vue",
-    targetUrl: routerBase+"/3D",
+    targetUrl: "/3D",
   },
   {
     title: "三维钻井轨迹图",
     description: "支持三维钻井轨迹可视化，可展示井轨迹、设计轨道，提供旋转/缩放等交互操作，支持多视角",
     imageSrc: "3d-well.jpg",
     componentUrl: "/src/components/WellGraphSuit.vue",
-    targetUrl: routerBase+"/GraphSuit",
+    targetUrl: "/GraphSuit",
   },
   // {
   //   title: "多井数据图",
@@ -54,7 +53,7 @@ export default [
     description: "支持地震切片、层位、断层及井分布可视化，提供缩放/漫游交互，集成光源属性/模型配置等三维可视化控制",
     imageSrc: "3d-workarea.jpg",
     componentUrl: "/src/components/WorkArea3D.vue",
-    targetUrl: routerBase+"/WorkArea3D",
+    targetUrl: "/WorkArea3D",
   },
 
   {
@@ -62,7 +61,7 @@ export default [
     description: "在工区中批量添加井，选中井，右键可单独查看井数据或通过画线工具连接多口井，选中画线可查看连井",
     imageSrc: "workarea.jpg",
     componentUrl: "/src/components/WorkArea.vue",
-    targetUrl: routerBase+"/WorkArea",
+    targetUrl: "/WorkArea",
   },
   // {
   //   title: "井平台编辑",
@@ -76,7 +75,7 @@ export default [
     description: "支持等值线网格化成图，支持设置网格化参数",
     imageSrc: "isoline-gridding.jpg",
     componentUrl: "/src/components/Isoline.vue",
-    targetUrl: routerBase+"/Isoline",
+    targetUrl: "/Isoline",
   },
   // {
   //     title: "测网",
@@ -95,7 +94,7 @@ export default [
     title: "格式转换",
     description: "支持油气行业常见格式（双狐、侏罗纪、MapGis、ArcGis等）读取解析，可转换为 PCG 格式适配多场景",
     imageSrc: "format-conversion.jpg",
-    targetUrl: routerBase+"/Format",
+    targetUrl: "/Format",
   },
   // {
   //   title: "数据查询",
